@@ -117,7 +117,8 @@ Which were the 3 pick up Boroughs that had a sum of total_amount superior to 500
 
 Answer: `"Brooklyn" "Manhattan" "Queens"`
 >Command
-```sql SELECT zpu."Borough",SUM(total_amount) AS total_amount_sum
+```sql 
+SELECT zpu."Borough",SUM(total_amount) AS total_amount_sum
 FROM green_taxi_trips gtt JOIN zones zpu ON gtt."PULocationID"=zpu."LocationID"
 WHERE DATE(lpep_pickup_datetime) = '2019-09-18' AND zpu."Borough" IS NOT NULL
 GROUP BY zpu."Borough"
