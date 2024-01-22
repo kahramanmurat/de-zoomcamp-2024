@@ -1,5 +1,6 @@
 .ipynb_checkpoints
 ny_taxi_postgres_data/
+homework/ny_taxi_postgres_data/
 *.csv
 /1_terraform_gcp/terraform/keys
 # Local .terraform directories

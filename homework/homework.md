@@ -23,7 +23,7 @@ Which tag has the following text? - *Automatically remove the container when it 
 - `--delete`
 - `--rc`
 - `--rmc`
-- `--rm` *Correct Answer*
+- `--rm` - `Correct Answer`
 
 Answer: `--rm` *Automatically remove the container when it exits*
 
@@ -35,12 +35,12 @@ Now check the python modules that are installed ( use ```pip list``` ).
 
 What is version of the package *wheel* ?
 
-- 0.42.0 - *Correct Answer*
+- 0.42.0 - `Correct Answer`
 - 1.0.0
 - 23.0.1
 - 58.1.0
 
-Answer: *wheel* `version 0.42.0`
+Answer: wheel version: `0.42.0`
 
 # Prepare Postgres
 
@@ -55,6 +55,14 @@ You will also need the dataset with zones:
 
 Download this data and put it into Postgres (with jupyter notebooks or with a pipeline)
 
+First build the docker image from Dockerfile.
+`docker build -t taxi_ingest:v001 .`
+
+Run the ralated csv files (green taxi and zones)
+
+`docker run -it --network=homework_default  taxi_ingest:v001 --user=USER--password=PASSWORD --host=pgdatabase --port=5432 --db=ny_taxi --table_name=green_taxi_trips --url=${URL}`
+
+`docker run -it --network=homework_default  taxi_ingest:v001 --user=USER --password=PASSWORD --host=pgdatabase --port=5432 --db=ny_taxi --table_name=zones --url=${URL}`
 
 ## Question 3. Count records 
 
@@ -65,9 +73,16 @@ Tip: started and finished on 2019-09-18.
 Remember that `lpep_pickup_datetime` and `lpep_dropoff_datetime` columns are in the format timestamp (date and hour+min+sec) and not in date.
 
 - 15767
-- 15612
+- 15612 - `Correct Answer`
 - 15859
 - 89009
+
+Answer: 
+```SELECT
+COUNT(*)
+FROM
+green_taxi_trips
+WHERE DATE(lpep_pickup_datetime)='2019-09-18' AND DATE(lpep_dropoff_datetime)='2019-09-18';```
 
 ## Question 4. Largest trip for each day
 
