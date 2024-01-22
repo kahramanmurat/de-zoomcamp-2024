@@ -39,12 +39,26 @@ Now check the python modules that are installed ( use ```pip list``` ).
 
 What is version of the package *wheel* ?
 
-- 0.42.0 - `Correct Answer`
+- 0.42.0
 - 1.0.0
 - 23.0.1
 - 58.1.0
 
-Answer: wheel version: `0.42.0`
+>Answer: `0.42.0`
+
+First run the docker image below:
+
+```
+docker run -it --entrypoint bash python:3.9
+```
+
+Run the command below:
+
+>Command:
+
+```
+pip list
+```
 
 # Prepare Postgres
 
