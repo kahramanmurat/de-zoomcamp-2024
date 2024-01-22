@@ -233,7 +233,8 @@ terraform apply
 Paste the output of this command into the homework submission form.
 
 >Answer:
-```terraform apply
+```
+terraform apply
 
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   + create
@@ -302,7 +303,8 @@ google_storage_bucket.homework_bucket: Creating...
 google_bigquery_dataset.homework_dataset: Creation complete after 1s [id=projects/ny-taxi-2024/datasets/homework_dataset]
 google_storage_bucket.homework_bucket: Creation complete after 1s [id=ny-taxi-2024-homework-bucket]
 
-Apply complete! Resources: 2 added, 0 changed, 0 destroyed.```
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+```
 
 ## Submitting the solutions
 
