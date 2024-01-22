@@ -23,10 +23,13 @@ Which tag has the following text? - *Automatically remove the container when it 
 - `--delete`
 - `--rc`
 - `--rmc`
-- `--rm` - `Correct Answer`
+- `--rm`
 
 >Answer: 
-```--rm```
+
+```
+--rm
+```
 
 
 ## Question 2. Understanding docker first run 
