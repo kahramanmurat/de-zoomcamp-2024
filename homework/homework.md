@@ -119,14 +119,12 @@ Answer: `15612`
 
 >Command:
 ```sql
- SELECT
+SELECT
 COUNT(*)
 FROM
 green_taxi_trips
 WHERE DATE(lpep_pickup_datetime)='2019-09-18' AND DATE(lpep_dropoff_datetime)='2019-09-18';
 ```
-
-
 
 ## Question 4. Largest trip for each day
 
@@ -135,17 +133,18 @@ Use the pick up time for your calculations.
 
 - 2019-09-18
 - 2019-09-16
-- 2019-09-26 - `Correct Answer`
+- 2019-09-26
 - 2019-09-21
 
-Answer:
+>Command:
 
-`SELECT 
+```sql
+SELECT 
 lpep_pickup_datetime, 
 trip_distance
 FROM green_taxi_trips
-ORDER BY trip_distance DESC`
-
+ORDER BY trip_distance DESC;
+```
 
 ## Question 5. Three biggest pick up Boroughs
 
