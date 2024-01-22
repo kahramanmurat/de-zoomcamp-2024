@@ -92,8 +92,16 @@ Use the pick up time for your calculations.
 
 - 2019-09-18
 - 2019-09-16
-- 2019-09-26
+- 2019-09-26 - `Correct Answer`
 - 2019-09-21
+
+Answer:
+
+`SELECT 
+lpep_pickup_datetime, 
+trip_distance
+FROM green_taxi_trips
+ORDER BY trip_distance DESC`
 
 
 ## Question 5. Three biggest pick up Boroughs
@@ -102,10 +110,20 @@ Consider lpep_pickup_datetime in '2019-09-18' and ignoring Borough has Unknown
 
 Which were the 3 pick up Boroughs that had a sum of total_amount superior to 50000?
  
-- "Brooklyn" "Manhattan" "Queens"
+- "Brooklyn" "Manhattan" "Queens" - `Correct Answer`
 - "Bronx" "Brooklyn" "Manhattan"
 - "Bronx" "Manhattan" "Queens" 
 - "Brooklyn" "Queens" "Staten Island"
+
+Answer: `"Brooklyn" "Manhattan" "Queens"`
+>Command
+```sql SELECT zpu."Borough",SUM(total_amount) AS total_amount_sum
+FROM green_taxi_trips gtt JOIN zones zpu ON gtt."PULocationID"=zpu."LocationID"
+WHERE DATE(lpep_pickup_datetime) = '2019-09-18' AND zpu."Borough" IS NOT NULL
+GROUP BY zpu."Borough"
+HAVING SUM(total_amount) > 50000
+ORDER BY total_amount_sum DESC
+LIMIT 3;```
 
 
 ## Question 6. Largest tip
