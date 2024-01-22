@@ -23,7 +23,9 @@ Which tag has the following text? - *Automatically remove the container when it 
 - `--delete`
 - `--rc`
 - `--rmc`
-- `--rm`
+- `--rm` Correct Answer
+
+Answer: `--rm` *Automatically remove the container when it exits*
 
 
 ## Question 2. Understanding docker first run 
