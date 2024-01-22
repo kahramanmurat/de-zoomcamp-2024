@@ -25,7 +25,8 @@ Which tag has the following text? - *Automatically remove the container when it 
 - `--rmc`
 - `--rm` - `Correct Answer`
 
-Answer: `--rm` *Automatically remove the container when it exits*
+>Answer: 
+```--rm```
 
 
 ## Question 2. Understanding docker first run 
