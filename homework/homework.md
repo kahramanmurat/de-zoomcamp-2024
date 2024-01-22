@@ -123,7 +123,8 @@ WHERE DATE(lpep_pickup_datetime) = '2019-09-18' AND zpu."Borough" IS NOT NULL
 GROUP BY zpu."Borough"
 HAVING SUM(total_amount) > 50000
 ORDER BY total_amount_sum DESC
-LIMIT 3;```
+LIMIT 3;
+```
 
 
 ## Question 6. Largest tip
