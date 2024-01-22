@@ -136,6 +136,8 @@ Use the pick up time for your calculations.
 - 2019-09-26
 - 2019-09-21
 
+>Answer: `2019-09-26`
+
 >Command:
 
 ```sql
