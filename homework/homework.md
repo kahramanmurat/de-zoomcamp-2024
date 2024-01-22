@@ -184,7 +184,32 @@ Note: it's not a typo, it's `tip` , not `trip`
 - JFK Airport
 - Long Island City/Queens Plaza
 
+Answer: `JFK Airport`
 
+>Command:
+```sql
+WITH CTE AS (
+    SELECT 
+        gtt."PULocationID" AS PULocationID,
+        zpu."Zone" AS pick_up_zone,
+        gtt."DOLocationID" AS DOLocationID,
+        zdo."Zone" AS drop_off_zone,
+        gtt.tip_amount AS tip_amount,
+        RANK() OVER (PARTITION BY gtt."PULocationID" ORDER BY gtt.tip_amount DESC) AS rnk
+    FROM
+        green_taxi_trips gtt
+        JOIN zones zpu ON gtt."PULocationID" = zpu."LocationID"
+        JOIN zones zdo ON gtt."DOLocationID" = zdo."LocationID"
+    WHERE zpu."Zone" = 'Astoria'
+)
+SELECT 
+    pick_up_zone,
+    drop_off_zone,
+    tip_amount
+FROM
+    CTE
+WHERE rnk = 1;
+```
 
 ## Terraform
 
