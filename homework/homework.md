@@ -73,14 +73,34 @@ You will also need the dataset with zones:
 
 Download this data and put it into Postgres (with jupyter notebooks or with a pipeline)
 
-First build the docker image from Dockerfile.
-`docker build -t taxi_ingest:v001 .`
+Run Postgres and load data as shown in the videos
 
-Run the ralated csv files (green taxi and zones)
+>Command
 
-`docker run -it --network=homework_default  taxi_ingest:v001 --user=USER--password=PASSWORD --host=pgdatabase --port=5432 --db=ny_taxi --table_name=green_taxi_trips --url=${URL}`
+```
+docker-compose up
+```
 
-`docker run -it --network=homework_default  taxi_ingest:v001 --user=USER --password=PASSWORD --host=pgdatabase --port=5432 --db=ny_taxi --table_name=zones --url=${URL}`
+We'll use the green taxi trips from September 2019:
+
+```wget https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-09.csv.gz```
+
+You will also need the dataset with zones:
+
+```wget https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv```
+
+>Command:
+```bash
+# Create a new ingest script that ingests both files called ingest_data.py, then dockerize it with
+
+docker build -t taxi_ingest:v001 .
+
+# Now find the network where the docker-compose containers are running with
+docker network ls
+
+# Finally, run the dockerized script
+docker run -it --network=homework_default  taxi_ingest:v001 --user=USER --password=PASSWORD --host=pgdatabase --port=5432 --db=ny_taxi --table_name=green_taxi_trips --url=${URL}
+```
 
 ## Question 3. Count records 
 
