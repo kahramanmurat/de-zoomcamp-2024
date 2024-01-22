@@ -118,8 +118,8 @@ Remember that `lpep_pickup_datetime` and `lpep_dropoff_datetime` columns are in 
 Answer: `15612`
 
 >Command:
-```
-sql SELECT
+```sql
+ SELECT
 COUNT(*)
 FROM
 green_taxi_trips
