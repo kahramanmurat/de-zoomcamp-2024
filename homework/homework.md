@@ -77,12 +77,13 @@ Remember that `lpep_pickup_datetime` and `lpep_dropoff_datetime` columns are in 
 - 15859
 - 89009
 
-Answer: 
-```SELECT
+Answer: `15612`
+
+`SELECT
 COUNT(*)
 FROM
 green_taxi_trips
-WHERE DATE(lpep_pickup_datetime)='2019-09-18' AND DATE(lpep_dropoff_datetime)='2019-09-18';```
+WHERE DATE(lpep_pickup_datetime)='2019-09-18' AND DATE(lpep_dropoff_datetime)='2019-09-18';`
 
 ## Question 4. Largest trip for each day
 
