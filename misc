@@ -1,0 +1,9 @@
+[submodule "3_workflow_orchestration/mage-zoomcamp"]
+    path = 3_workflow_orchestration/mage-zoomcamp
+    url = https://github.com/kahramanmurat/de-zoomcamp-2024.git
+
+
+git pull origin master
+
+git submodule add https://github.com/kahramanmurat/de-zoomcamp-2024.git 3_workflow_orchestration/mage-zoomcamp
+
