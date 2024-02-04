@@ -40,3 +40,4 @@ terraform.rc
 **/.terraform.lock.hcl
 *.json
 *.txt
+misc
