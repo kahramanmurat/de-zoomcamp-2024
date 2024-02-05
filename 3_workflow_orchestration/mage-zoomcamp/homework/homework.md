@@ -113,6 +113,46 @@ Upon filtering the dataset where the passenger count is greater than 0 _and_ the
 * 139,370 rows
 * 266,856 rows
 
+>Answer: 139,370 rows
+
+```
+if 'transformer' not in globals():
+    from mage_ai.data_preparation.decorators import transformer
+if 'test' not in globals():
+    from mage_ai.data_preparation.decorators import test
+
+
+@transformer
+def transform(data, *args, **kwargs):
+
+    # Print information about rows with zero passengers
+    zero_passenger_count = data['passenger_count'].isin([0]).sum()
+    zero_trip_distance = data['trip_distance'].isin([0]).sum()
+
+    print(f"Preprocessing: rows with zero passengers: {zero_passenger_count}")
+    print(f"Preprocessing: rows with zero trip distance: {zero_trip_distance}")
+
+
+    # Remove rows where passenger_count or trip_distance is equal to 0
+    data = data[(data['passenger_count'] > 0) & (data['trip_distance'] > 0)]
+
+    data['lpep_pickup_date'] = data['lpep_pickup_datetime'].dt.date
+
+    data.columns=data.columns.str.replace(' ','_').str.lower()
+    
+    return data
+
+
+@test
+def test_output(output, *args) -> None:
+    # Get unique values from 'vendor_id' column
+    unique_vendor_ids = output['vendorid'].unique()
+
+    assert set(output['vendorid']).issubset(unique_vendor_ids), "vendorid is not one of the existing values."
+    assert (output['passenger_count'] > 0).all(), "passenger_count should be greater than 0."
+    assert (output['trip_distance'] > 0).all(), "trip_distance should be greater than 0."
+```
+
 ## Question 3. Data Transformation
 
 Which of the following creates a new column `lpep_pickup_date` by converting `lpep_pickup_datetime` to a date?
