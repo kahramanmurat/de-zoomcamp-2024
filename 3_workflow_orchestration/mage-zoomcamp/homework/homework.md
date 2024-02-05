@@ -37,6 +37,8 @@ Once the dataset is loaded, what's the shape of the data?
 * 544,898 rows x 20 columns
 * 133,744 rows x 20 columns
 
+>Answer: `266,855 rows x 20 columns`
+
 ```import io
 import pandas as pd
 import requests
