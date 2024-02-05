@@ -176,6 +176,15 @@ What are the existing values of `VendorID` in the dataset?
 * 1, 2, 3, 4
 * 1
 
+>Answer: 1 or 2
+
+BigQuery SQL query:
+
+```
+SELECT  DISTINCT(vendorid) FROM `ny-taxi-2024.ny_taxi_data.green_taxi`
+
+```
+
 ## Question 5. Data Transformation
 
 How many columns need to be renamed to snake case?
@@ -184,6 +193,15 @@ How many columns need to be renamed to snake case?
 * 6
 * 2
 * 4
+
+>Answer: 4
+
+```
+VendorID
+RatecodeID
+PULocationID
+DOLocationID
+```
 
 ## Question 6. Data Exporting
 
