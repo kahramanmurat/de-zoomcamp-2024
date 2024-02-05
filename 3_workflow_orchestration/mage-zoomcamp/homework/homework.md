@@ -164,7 +164,8 @@ Which of the following creates a new column `lpep_pickup_date` by converting `lp
 
 >Answer:
 ```
-data['lpep_pickup_date'] = data['lpep_pickup_datetime'].dt.date```
+data['lpep_pickup_date'] = data['lpep_pickup_datetime'].dt.date
+```
 
 ## Question 4. Data Transformation
 
