@@ -40,4 +40,5 @@ terraform.rc
 **/.terraform.lock.hcl
 *.json
 *.txt
-misc
+*.txt
+*.csv.gz
