@@ -43,3 +43,4 @@ terraform.rc
 *.txt
 *.csv.gz
 *.gitmodules
+/workshops/.env
