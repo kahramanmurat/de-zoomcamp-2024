@@ -156,3 +156,9 @@ FROM
 `ny-taxi-2024.bq_green_taxi_dataset.green_tripdata_ml`
 WHERE
 tip_amount IS NOT NULL;
+
+
+gcloud auth login
+bq --project_id ny-taxi-2024 extract -m bq_green_taxi_dataset.tip_model gs://ny-taxi-2024-green_taxi-bucket/tip_model
+mkdir /tmp/model
+gsutil cp -r gs://ny-taxi-2024-green_taxi-bucket/tip_model /tmp/model
