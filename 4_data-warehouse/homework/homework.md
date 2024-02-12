@@ -34,6 +34,15 @@ What is the estimated amount of data that will be read when this query is execut
 - 0 MB for the External Table and 0MB for the Materialized Table
 - 2.14 MB for the External Table and 0MB for the Materialized Table
 
+>Answer: 0 MB for the External Table and 6.41MB for the Materialized Table
+
+```
+SELECT COUNT(DISTINCT PULocationID)  FROM `ny-taxi-2024.bq_green_taxi_dataset.green_tripdata_non_partitoned`;
+```
+
+```
+SELECT COUNT(DISTINCT PULocationID) FROM `ny-taxi-2024.bq_green_taxi_dataset.external_green_tripdata_2022`;
+```
 
 ## Question 3:
 How many records have a fare_amount of 0?
@@ -41,6 +50,12 @@ How many records have a fare_amount of 0?
 - 128,219
 - 112
 - 1,622
+
+>Answer: 1622
+
+```
+SELECT COUNT(*) FROM `ny-taxi-2024.bq_green_taxi_dataset.external_green_tripdata_2022` WHERE fare_amount=0;
+```
 
 ## Question 4:
 What is the best strategy to make an optimized table in Big Query if your query will always order the results by PUlocationID and filter based on lpep_pickup_datetime? (Create a new table with this strategy)
