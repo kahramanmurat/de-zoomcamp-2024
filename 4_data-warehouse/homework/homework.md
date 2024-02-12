@@ -111,16 +111,26 @@ Where is the data stored in the External Table you created?
 - Big Table
 - Container Registry
 
+>Answer: GCP Bucket
+
 
 ## Question 7:
 It is best practice in Big Query to always cluster your data:
 - True
 - False
 
+>Answer: No.In some cases, partitioning alone may be sufficient for achieving optimal performance.
+
 
 ## (Bonus: Not worth points) Question 8:
 No Points: Write a `SELECT count(*)` query FROM the materialized table you created. How many bytes does it estimate will be read? Why?
 
+>Answer: 114.11MB. No partition and clustering.
+
+```
+-- Query scans 114.11MB
+SELECT *  FROM `ny-taxi-2024.bq_green_taxi_dataset.green_tripdata_non_partitoned`;
+```
  
 ## Submitting the solutions
 
