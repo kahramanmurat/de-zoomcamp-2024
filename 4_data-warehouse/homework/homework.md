@@ -64,6 +64,16 @@ What is the best strategy to make an optimized table in Big Query if your query 
 - Partition by lpep_pickup_datetime and Partition by PUlocationID
 - Cluster on by lpep_pickup_datetime and Cluster on PUlocationID
 
+>Answer: Partition by lpep_pickup_datetime  Cluster on PUlocationID
+
+```
+-- Creating a partition and cluster table
+CREATE OR REPLACE TABLE ny-taxi-2024.bq_green_taxi_dataset.green_tripdata_partitoned_clustered_hw
+PARTITION BY DATE(lpep_pickup_datetime) 
+CLUSTER BY PULocationID  AS
+SELECT * FROM ny-taxi-2024.bq_green_taxi_dataset.external_green_tripdata_2022;
+```
+
 ## Question 5:
 Write a query to retrieve the distinct PULocationID between lpep_pickup_datetime
 06/01/2022 and 06/30/2022 (inclusive)</br>
@@ -77,6 +87,21 @@ Choose the answer which most closely matches.</br>
 - 5.63 MB for non-partitioned table and 0 MB for the partitioned table
 - 10.31 MB for non-partitioned table and 10.31 MB for the partitioned table
 
+>Answer: 
+
+```
+-- Query scans 12.82MB
+SELECT DISTINCT PULocationID
+FROM  ny-taxi-2024.bq_green_taxi_dataset.green_tripdata_non_partitoned
+WHERE DATE(lpep_pickup_datetime) BETWEEN '2022-06-01' AND '2022-06-30';
+```
+
+```
+-- Query scans 1.12Byte
+SELECT DISTINCT PULocationID
+FROM  ny-taxi-2024.bq_green_taxi_dataset.green_tripdata_partitoned_clustered_hw
+WHERE DATE(lpep_pickup_datetime) BETWEEN '2022-06-01' AND '2022-06-30';
+```
 
 ## Question 6: 
 Where is the data stored in the External Table you created?
