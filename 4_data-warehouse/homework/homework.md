@@ -21,7 +21,8 @@ Question 1: What is count of records for the 2022 Green Taxi Data??
 
 >Answer: 840.402
 
-```SELECT COUNT(*) FROM `ny-taxi-2024.bq_green_taxi_dataset.external_green_tripdata_2022`;
+```
+SELECT COUNT(*) FROM `ny-taxi-2024.bq_green_taxi_dataset.external_green_tripdata_2022`;
 ```
 
 ## Question 2:
