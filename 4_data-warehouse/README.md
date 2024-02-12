@@ -162,3 +162,7 @@ gcloud auth login
 bq --project_id ny-taxi-2024 extract -m bq_green_taxi_dataset.tip_model gs://ny-taxi-2024-green_taxi-bucket/tip_model
 mkdir /tmp/model
 gsutil cp -r gs://ny-taxi-2024-green_taxi-bucket/tip_model /tmp/model
+mkdir -p serving_dir/tip_model/1
+cp -r /tmp/model/tip_model/* serving_dir/tip_model/1
+docker pull tensorflow/serving
+docker run -p 8501:8501 --mount type=bind,source=pwd/serving_dir/tip_model,target= /models/tip_model -e MODEL_NAME=tip_model -t tensorflow/serving &
