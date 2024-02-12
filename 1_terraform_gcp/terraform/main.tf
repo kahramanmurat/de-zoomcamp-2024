@@ -9,13 +9,14 @@ terraform {
 }
 
 provider "google" {
-  project = "ny-taxi-2024"
-  region  = "us-east4"
+  credentials = file(var.credentials)
+  project     = var.project
+  region      = var.region
 }
 
-resource "google_storage_bucket" "data-lake-bucket" {
-  name          = "ny-taxi-2024-terraform"
-  location      = "US"
+resource "google_storage_bucket" "homework_bucket" {
+  name          = var.gcs_bucket_name
+  location      = var.location
   force_destroy = true
 
   lifecycle_rule {
@@ -26,4 +27,11 @@ resource "google_storage_bucket" "data-lake-bucket" {
       age = 30 // days
     }
   }
+}
+
+resource "google_bigquery_dataset" "homework_dataset" {
+  dataset_id = var.bq_dataset_name
+  location   = var.location
+
+
 }
