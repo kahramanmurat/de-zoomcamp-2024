@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: staging
+    database: ny-taxi-2024
+    schema: bq_taxi_dataset
+    tables:
+      - name: green_tripdata
+      - name: yellow_tripdata
