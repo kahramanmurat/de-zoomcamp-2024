@@ -20,12 +20,12 @@ variable "location" {
 
 variable "bq_dataset_name" {
   description = "My BigQuery Dataset Name"
-  default     = "bq_green_taxi_dataset"
+  default     = "bq_taxi_dataset"
 }
 
 variable "gcs_bucket_name" {
   description = "Bucket Storage Name"
-  default     = "ny-taxi-2024-green_taxi-bucket"
+  default     = "ny-taxi-2024-taxi-bucket"
 }
 
 variable "gcs_storage_class" {
