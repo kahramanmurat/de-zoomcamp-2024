@@ -14,6 +14,7 @@ source as (
 renamed as (
 
     select
+    {{ dbt_utils.generate_surrogate_key(['dispatching_base_num', 'pickup_datetime']) }} as tripid,
         dispatching_base_num,
         pickup_datetime,
         dropoff_datetime,
