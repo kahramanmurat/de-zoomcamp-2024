@@ -78,6 +78,11 @@ Create a dashboard with some tiles that you find interesting to explore the data
 - Yellow
 - FHV and Green
 
+> Answer:
+```
+Yellow
+```
+
 
 ## Submitting the solutions
 
