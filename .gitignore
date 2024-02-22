@@ -45,3 +45,5 @@ terraform.rc
 *.parquet
 *.gitmodules
 /workshops/.env
+*.csv
+!5_analytics_engineering/taxi_rides_ny/seeds/taxi_zone_lookup.csv
