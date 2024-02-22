@@ -26,7 +26,7 @@ models:
     description: >
       Taxi trips corresponding to both service zones (Green and yellow).
       The table contains records where both pickup and dropoff locations are valid and known zones. 
-      Each record corresponds to a trip uniquely identified by tripid. 
+      Each record corresponds to a trip uniquely identified by tripid.
     columns:
       - name: tripid
         data_type: string
@@ -136,7 +136,7 @@ models:
     description: >
       Aggregated table of all taxi trips corresponding to both service zones (Green and yellow) per pickup zone, month and service.
       The table contains monthly sums of the fare elements used to calculate the monthly revenue. 
-      The table contains also monthly indicators like number of trips, and average trip distance. 
+      The table contains also monthly indicators like number of trips, and average trip distance.
     columns:
       - name: revenue_zone
         data_type: string
@@ -192,4 +192,93 @@ models:
 
       - name: avg_monthly_trip_distance
         data_type: numeric
+        description: ""
+
+  - name: fact_trips_fhv
+    description: ""
+    columns:
+      - name: tripid
+        data_type: string
+        description: ""
+
+      - name: dispatching_base_num
+        data_type: string
+        description: ""
+
+      - name: service_type
+        data_type: string
+        description: ""
+
+      - name: pickup_datetime
+        data_type: timestamp
+        description: ""
+
+      - name: dropoff_datetime
+        data_type: timestamp
+        description: ""
+
+      - name: pulocationid
+        data_type: int64
+        description: ""
+
+      - name: dolocationid
+        data_type: int64
+        description: ""
+
+      - name: sr_flag
+        data_type: string
+        description: ""
+
+      - name: affiliated_base_number
+        data_type: string
+        description: ""
+
+      - name: pickup_borough
+        data_type: string
+        description: ""
+
+      - name: pickup_zone
+        data_type: string
+        description: ""
+
+      - name: dropoff_borough
+        data_type: string
+        description: ""
+
+      - name: dropoff_zone
+        data_type: string
+        description: ""
+
+  - name: dm_monthly_rides
+    description: ""
+    columns:
+      - name: year_month
+        data_type: string
+        description: ""
+
+      - name: service_type
+        data_type: string
+        description: ""
+
+      - name: trip_year
+        data_type: int64
+        description: ""
+
+      - name: trip_month
+        data_type: int64
+        description: ""
+
+      - name: total_trips
+        data_type: int64
+        description: ""
+
+  - name: dm_most_rides_july
+    description: ""
+    columns:
+      - name: service_type
+        data_type: string
+        description: ""
+
+      - name: total_trips
+        data_type: int64
         description: ""
