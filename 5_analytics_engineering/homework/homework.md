@@ -94,7 +94,10 @@ I created 2 models for this question.
 - dm_most_rides_july.sql [Code Link](https://github.com/kahramanmurat/de-zoomcamp-2024/blob/main/5_analytics_engineering/taxi_rides_ny/models/core/dm_most_rides_july.sql)
 
 Dashoard in Google Looker:
-![dm_monthly_rides](/workspaces/de-zoomcamp-2024/5_analytics_engineering/homework/dashboard.png)
+![dm_monthly_rides](https://github.com/kahramanmurat/de-zoomcamp-2024/blob/main/5_analytics_engineering/homework/dashboard.png)
+
+Final Lineage:
+![dm_monthly_rides](https://github.com/kahramanmurat/de-zoomcamp-2024/blob/main/5_analytics_engineering/homework/lineage.png)
 
 
 ## Submitting the solutions
