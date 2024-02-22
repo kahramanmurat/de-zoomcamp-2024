@@ -66,8 +66,10 @@ Run the dbt model without limits (is_test_run: false).
 ```
 22998722
 ````
-> sq:
+> sql code for stg_fhv_trips:
 ```
+Please find the  code for [stg_fhv_tripdata.sql](https://github.com/kahramanmurat/de-zoomcamp-2024/blob/main/5_analytics_engineering/taxi_rides_ny/models/staging/stg_fhv_tripdata.sql)
+
 {{
     config(
         materialized='table'
