@@ -5,6 +5,9 @@ homework/ny_taxi_postgres_data/
 /1_terraform_gcp/terraform/keys
 # Local .terraform directories
 **/.terraform/*
+**/jdk-11.0.2/*
+
+**/spark-3.3.2-bin-hadoop3/*
 
 # .tfstate files
 *.tfstate
