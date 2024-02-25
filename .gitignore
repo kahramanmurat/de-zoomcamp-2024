@@ -9,6 +9,7 @@ homework/ny_taxi_postgres_data/
 
 **/spark-3.3.2-bin-hadoop3/*
 **/fhv/*
+**/data/*
 
 # .tfstate files
 *.tfstate
