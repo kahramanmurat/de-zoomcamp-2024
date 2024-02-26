@@ -11,6 +11,8 @@ homework/ny_taxi_postgres_data/
 **/fhv/*
 **/data/*
 **/tmp/*
+**/zones/*
+
 
 
 # .tfstate files
