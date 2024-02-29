@@ -9,13 +9,9 @@
 
 What's the output?
 
+>Answer:
+
 ```
-SparkSession - in-memory
-
-SparkContext
-
-Spark UI
-
-Versionv3.3.2Masterlocal[*]AppNametest
+Versionv3.3.2
 ```
 
