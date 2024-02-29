@@ -25,7 +25,7 @@ variable "bq_dataset_name" {
 
 variable "gcs_bucket_name" {
   description = "Bucket Storage Name"
-  default     = "ny-taxi-2024-taxi-bucket"
+  default     = "ny-taxi-2024-taxi"
 }
 
 variable "gcs_storage_class" {
