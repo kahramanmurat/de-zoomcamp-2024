@@ -9,3 +9,13 @@
 
 What's the output?
 
+```
+SparkSession - in-memory
+
+SparkContext
+
+Spark UI
+
+Versionv3.3.2Masterlocal[*]AppNametest
+```
+
