@@ -1,3 +1,4 @@
+Please find the code [here](https://github.com/kahramanmurat/de-zoomcamp-2024/blob/main/6_batch/homework/homework.ipynb)
 ### Question 1: 
 
 **Install Spark and PySpark** 
