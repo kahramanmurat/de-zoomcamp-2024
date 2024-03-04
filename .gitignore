@@ -14,6 +14,8 @@ homework/ny_taxi_postgres_data/
 **/tmp/*
 **/zones/*
 
+**/__pycache__/*
+
 
 
 # .tfstate files
