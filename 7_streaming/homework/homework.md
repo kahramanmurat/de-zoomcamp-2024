@@ -59,6 +59,11 @@ Read the output of `help` and based on it, create a topic with name `test-topic`
 
 What's the output of the command for creating a topic?
 
+> Answer
+```
+TOPIC       STATUS
+test-topic  OK
+```
 
 ## Question 3. Connecting to the Kafka server
 
