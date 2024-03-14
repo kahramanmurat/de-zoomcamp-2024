@@ -2,6 +2,8 @@ import csv
 from time import sleep
 from typing import Dict
 from kafka import KafkaProducer
+import findspark
+findspark.init()
 
 from settings import BOOTSTRAP_SERVERS, INPUT_DATA_PATH, PRODUCE_TOPIC_RIDES_CSV
 

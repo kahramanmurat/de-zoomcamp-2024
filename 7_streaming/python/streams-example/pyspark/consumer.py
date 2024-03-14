@@ -1,6 +1,8 @@
 import argparse
 from typing import Dict, List
 from kafka import KafkaConsumer
+import findspark
+findspark.init()
 
 from settings import BOOTSTRAP_SERVERS, CONSUME_TOPIC_RIDES_CSV
 

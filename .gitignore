@@ -13,6 +13,7 @@ homework/ny_taxi_postgres_data/
 **/data/*
 **/tmp/*
 **/zones/*
+**/checkpoint/*
 
 **/__pycache__/*
 

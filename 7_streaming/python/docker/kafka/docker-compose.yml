@@ -65,7 +65,6 @@ services:
       CONTROL_CENTER_MONITORING_INTERCEPTOR_TOPIC_PARTITIONS: 1
       CONFLUENT_METRICS_TOPIC_REPLICATION: 1
       PORT: 9021
-
   kafka-rest:
     image: confluentinc/cp-kafka-rest:7.2.0
     hostname: kafka-rest
