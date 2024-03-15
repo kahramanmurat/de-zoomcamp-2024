@@ -104,6 +104,10 @@ producer.bootstrap_connected()
 Provided that you can connect to the server, what's the output
 of the last command?
 
+> Answer:
+```
+True
+```
 
 ## Question 4. Sending data to the stream
 
@@ -146,6 +150,32 @@ rpk topic consume test-topic
 
 Run the command above and send the messages one more time to 
 see them
+
+> Answer:
+
+```
+{
+  "topic": "test-topic",
+  "value": "{\"number\": 7}",
+  "timestamp": 1710395800432,
+  "partition": 0,
+  "offset": 67
+}
+{
+  "topic": "test-topic",
+  "value": "{\"number\": 8}",
+  "timestamp": 1710395800483,
+  "partition": 0,
+  "offset": 68
+}
+{
+  "topic": "test-topic",
+  "value": "{\"number\": 9}",
+  "timestamp": 1710395800534,
+  "partition": 0,
+  "offset": 69
+}
+```
 
 
 ## Sending the taxi data
